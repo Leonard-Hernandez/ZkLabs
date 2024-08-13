@@ -1,0 +1,29 @@
+<?page title="sidebar" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<grid hflex="1" vflex="1" sclass="sidebar">
+		<columns>
+			<column width="36px"/>
+			<column/>
+		</columns>
+		<rows>
+			<row>
+				<image src="/img/site.png"/>
+				<a href="https://github.com/Leonard-Hernandez/Archery-Api" target="_blank">
+					Arco
+				</a>
+			</row>
+			<row>
+				<image src="/img/demo.png"/>
+				<a href="https://github.com/Leonard-Hernandez/Java-Curso-Guzman" target="_blank">
+					Diana
+				</a>
+			</row>
+			<row>
+				<image src="/img/doc.png"/>
+				<a href="https://github.com/Leonard-Hernandez/CarrosStockZk" target="_blank">
+					Notas
+				</a>
+			</row>
+		</rows>
+	</grid>
+</zk>
