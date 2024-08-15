@@ -1,28 +1,36 @@
 <?page title="sidebar" contentType="text/html;charset=UTF-8"?>
 <zk>
 	<grid hflex="1" vflex="1" sclass="sidebar">
+		<zscript>
+			<![CDATA[ 
+				// zscript corre de lado del servidor es mejor para prototipar pero no es recomendado para produccion
+				java.util.Map sites = new java.util.HashMap();
+				
+				sites.put("Arco", "https://github.com/Leonard-Hernandez/Archery-Api");
+				sites.put("Diana", "https://github.com/Leonard-Hernandez/Java-Curso-Guzman");
+				sites.put("Notas", "https://github.com/Leonard-Hernandez/CarrosStockZk");
+				
+				void redirect(String name){
+					String loc = sites.get(name);
+					if(loc!=null){
+						execution.sendRedirect(loc);
+					}
+				}
+			]]>
+		</zscript>
 		<columns>
 			<column width="36px"/>
 			<column/>
 		</columns>
 		<rows>
-			<row>
-				<image src="/img/site.png"/>
-				<a href="https://github.com/Leonard-Hernandez/Archery-Api" target="_blank">
-					Arco
-				</a>
+			<row sclass="sidebar-fn" onClick='redirect("Arco")'>
+				<image src="/img/site.png"/> Arco
 			</row>
-			<row>
-				<image src="/img/demo.png"/>
-				<a href="https://github.com/Leonard-Hernandez/Java-Curso-Guzman" target="_blank">
-					Diana
-				</a>
+			<row sclass="sidebar-fn" onClick='redirect("Diana")'>
+				<image src="/img/demo.png"/> Diana
 			</row>
-			<row>
-				<image src="/img/doc.png"/>
-				<a href="https://github.com/Leonard-Hernandez/CarrosStockZk" target="_blank">
-					Notas
-				</a>
+			<row sclass="sidebar-fn" onClick='redirect("Notas")'>
+				<image src="/img/doc.png"/> Notas
 			</row>
 		</rows>
 	</grid>
