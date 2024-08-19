@@ -6,8 +6,8 @@
 			<column width="36px"></column>
 		</columns>
 		<rows>
-			<template name="">
-				<row sclass="siderbar-fn" onClick="@Command('navigate', page=each)">
+			<template name="model">
+				<row sclass="siderbar-fn" onClick="@command('navigate', page=each)">
 					<image src="@load(each.iconUri)" />
 					<label value="@load(each.label)" />
 				</row>
