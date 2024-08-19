@@ -4,6 +4,7 @@
 		hflex="1" vflex="1" sclass="sidebar" model="@load(vm.sidebarPages)">
 		<columns>
 			<column width="36px"></column>
+			<column/>
 		</columns>
 		<rows>
 			<template name="model">
