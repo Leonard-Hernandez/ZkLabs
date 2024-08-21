@@ -22,7 +22,7 @@
 					<row>
 						<cell sclass="row-title">Full name :</cell>
 						<cell>
-							<textbox id="fullName" width="200px" />
+							<textbox id="fullName" constraint="no empty: Please enter your full name" width="200px" />
 						</cell>
 					</row>
 					<row>
@@ -42,7 +42,11 @@
 					<row>
 						<cell sclass="row-title">Country :</cell>
 						<cell>
-
+							<listbox id="country" mold="select" width="200px">
+								<template name="model">
+									<listitem label="${each}"/>
+								</template>
+							</listbox>
 						</cell>
 					</row>
 					<row>
