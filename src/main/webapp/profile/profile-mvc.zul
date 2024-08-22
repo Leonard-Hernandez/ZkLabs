@@ -1,7 +1,7 @@
 <?page title="profile mvc" contentType="text/html;charset=UTF-8"?>
 <?link rel="stylesheet" type="text/css" href="../style.css"?>
 <zk>
-	<window border="normal" hflex="1" vflex="1"
+	<window apply="profile.ProfileViewController" border="normal" hflex="1" vflex="1"
 		contentStyle="overflow:auto">
 		<caption src="../img/profile.png" sclass="fn-caption"
 			label="Profile (MVC)" />
@@ -22,7 +22,9 @@
 					<row>
 						<cell sclass="row-title">Full name :</cell>
 						<cell>
-							<textbox id="fullName" constraint="no empty: Please enter your full name" width="200px" />
+							<textbox id="fullName"
+								constraint="no empty: Please enter your full name"
+								width="200px" />
 						</cell>
 					</row>
 					<row>
@@ -36,15 +38,17 @@
 					<row>
 						<cell sclass="row-title">Birthday :</cell>
 						<cell>
-							<datebox id="birthday" constraint="no future" width="200px" />
+							<datebox id="birthday"
+								constraint="no future" width="200px" />
 						</cell>
 					</row>
 					<row>
 						<cell sclass="row-title">Country :</cell>
 						<cell>
-							<listbox id="country" mold="select" width="200px">
+							<listbox id="country" mold="select"
+								width="200px">
 								<template name="model">
-									<listitem label="${each}"/>
+									<listitem label="${each}" />
 								</template>
 							</listbox>
 						</cell>
