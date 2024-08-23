@@ -1,0 +1,23 @@
+<?page title="todo list mvc" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="../style.css" ?>
+<zk>
+	<window title="Todo list" border="normal" hflex="1" vflex="1"
+		contentStyle="overflow:auto">
+		<caption src="../img/todo.png" sclass="fn-caption" label="Todo List (MVC)"/>
+		<borderlayout>
+			<center autoscroll="true" border="none">
+				<vlayout hflex="1" vflex="1">
+
+				</vlayout>
+			</center>
+			<east id="selectedTodoBlock" visible="false" width="300px"
+				border="none" collapsible="false" splittable="false" minsize="300"
+				autoscroll="true">
+				<vlayout>
+				
+				</vlayout>
+			</east>
+		</borderlayout>
+
+	</window>
+</zk>
