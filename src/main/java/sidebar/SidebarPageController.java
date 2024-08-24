@@ -48,7 +48,7 @@ public class SidebarPageController extends SelectorComposer<Component>{
 		
 		//set style attribute
 		row.setSclass("sidebar-fn");
-		
+			
 		//create and register event listener
 		EventListener<Event> actionListener = new SerializableEventListener<Event>() {
 			private static final long serialVersionUID = 1L;

@@ -1,12 +1,41 @@
 <?page title="todo list mvc" contentType="text/html;charset=UTF-8"?>
 <?link rel="stylesheet" type="text/css" href="../style.css" ?>
 <zk>
-	<window title="Todo list" border="normal" hflex="1" vflex="1"
+	<window apply="todo.TodoListController"
+	title="Todo list" border="normal" hflex="1" vflex="1"
 		contentStyle="overflow:auto">
-		<caption src="../img/todo.png" sclass="fn-caption" label="Todo List (MVC)"/>
+		<caption src="../img/todo.png" sclass="fn-caption"
+			label="Todo List (MVC)" />
 		<borderlayout>
 			<center autoscroll="true" border="none">
 				<vlayout hflex="1" vflex="1">
+
+					<!-- Read -->
+					<listbox id="todoListBox" vflex="1">
+						<listhead>
+							<listheader width="30px" />
+							<listheader />
+							<listheader hflex="min" />
+						</listhead>
+						<template name="model">
+							<listitem
+								sclass="${each.complete?'complete-todo':''}" value="${each}">
+								<listcell>
+									<checkbox
+										forward="onCheck=todoListbox.onTodoCheck"
+										checked="${each.complete}" />
+								</listcell>
+								<listcell>
+									<label value="${each.subject}" />
+								</listcell>
+								<listcell>
+									<button
+										forward="onClick=todoListbox.onTodoDelete"
+										image="../img/cross.png" width="36px" />
+								</listcell>
+							</listitem>
+						</template>
+					</listbox>
 
 				</vlayout>
 			</center>
@@ -14,7 +43,7 @@
 				border="none" collapsible="false" splittable="false" minsize="300"
 				autoscroll="true">
 				<vlayout>
-				
+
 				</vlayout>
 			</east>
 		</borderlayout>
