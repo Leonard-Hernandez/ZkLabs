@@ -1,19 +1,25 @@
 <?page title="todo list mvc" contentType="text/html;charset=UTF-8"?>
 <?link rel="stylesheet" type="text/css" href="../style.css" ?>
 <zk>
-	<window apply="todo.TodoListController"
-	title="Todo list" border="normal" hflex="1" vflex="1"
-		contentStyle="overflow:auto">
+	<window apply="todo.TodoListController" title="Todo list"
+		border="normal" hflex="1" vflex="1" contentStyle="overflow:auto">
 		<caption src="../img/todo.png" sclass="fn-caption"
 			label="Todo List (MVC)" />
 		<borderlayout>
 			<center autoscroll="true" border="none">
+				<!-- Create -->
 				<vlayout hflex="1" vflex="1">
+					<hbox align="center" hflex="1" sclass="todo-box">
+						<textbox id="todoSubject" hflex="1"
+							placeholder="What needs to be done?" />
+						<button id="addTodo" image="../img/plus.png"
+							width="36px" />
+					</hbox>
 
 					<!-- Read -->
 					<listbox id="todoListBox" vflex="1">
 						<listhead>
-							<listheader width="30px" />
+							<listheader width="30px" hflex="min" />
 							<listheader />
 							<listheader hflex="min" />
 						</listhead>
@@ -43,7 +49,53 @@
 				border="none" collapsible="false" splittable="false" minsize="300"
 				autoscroll="true">
 				<vlayout>
-
+					<hbox align="center" hflex="1">
+						<checkbox id="selectedTodoCheck" />
+						<textbox id="selectedTodoSubject" hflex="1" />
+					</hbox>
+					<grid hflex="1">
+						<columns>
+							<column align="right" hflex="min" />
+							<column />
+						</columns>
+						<rows>
+							<row>
+								<cell sclass="row-title">
+									Priority :
+								</cell>
+								<cell>
+									<radiogroup
+										id="selectedTodoPriority">
+										<template name="model">
+											<radio
+												label="${each.label}" />
+										</template>
+									</radiogroup>
+								</cell>
+							</row>
+							<row>
+								<cell sclass="row-title">Date :</cell>
+								<cell>
+									<datebox id="selectedTodoDate"
+										width="200px" />
+								</cell>
+							</row>
+							<row>
+								<cell sclass="row-title">
+									Description :
+								</cell>
+								<cell>
+									<textbox
+										id="selectedTodoDescription" multiline="true" hflex="1"
+										height="200px" />
+								</cell>
+							</row>
+						</rows>
+					</grid>
+					<hlayout>
+					<button id="updateSelectedTodo" label="Update"/>
+					<button id="reloadSelectedTodo" label="Reload"/>
+				</hlayout>
 				</vlayout>
 			</east>
 		</borderlayout>
