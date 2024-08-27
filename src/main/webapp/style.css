@@ -3,3 +3,10 @@
 	color: white;
 	padding: 5px 10px;
 }
+
+.todo-box button{
+	display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    background-color: #212f3d;
+}

@@ -7,16 +7,17 @@
 			label="Todo List (MVC)" />
 		<borderlayout>
 			<center autoscroll="true" border="none">
-				<!-- Create -->
+			
+				<!-- Create todo -->
 				<vlayout hflex="1" vflex="1">
 					<hbox align="center" hflex="1" sclass="todo-box">
 						<textbox id="todoSubject" hflex="1"
 							placeholder="What needs to be done?" />
 						<button id="addTodo" image="../img/plus.png"
-							width="36px" />
+							width="36px"/>
 					</hbox>
 
-					<!-- Read -->
+					<!-- Read todos -->
 					<listbox id="todoListBox" vflex="1">
 						<listhead>
 							<listheader width="30px" hflex="min" />
@@ -36,26 +37,28 @@
 								</listcell>
 								<listcell>
 									<button
+										sclass="centered-button"
 										forward="onClick=todoListbox.onTodoDelete"
 										image="../img/cross.png" width="36px" />
 								</listcell>
 							</listitem>
 						</template>
 					</listbox>
-
+					
 				</vlayout>
 			</center>
-			<east id="selectedTodoBlock" visible="false" width="300px"
-				border="none" collapsible="false" splittable="false" minsize="300"
+			
+			<east id="selectedTodoBlock" visible="false" width="400px"
+				border="none" collapsible="false" splittable="true" minsize="400"
 				autoscroll="true">
 				<vlayout>
 					<hbox align="center" hflex="1">
 						<checkbox id="selectedTodoCheck" />
 						<textbox id="selectedTodoSubject" hflex="1" />
 					</hbox>
-					<grid hflex="min">
+					<grid hflex="1">
 						<columns>
-							<column align="right" hflex="min" />
+							<column align="left" hflex="min" />
 							<column />
 						</columns>
 						<rows>
