@@ -53,7 +53,7 @@
 						<checkbox id="selectedTodoCheck" />
 						<textbox id="selectedTodoSubject" hflex="1" />
 					</hbox>
-					<grid hflex="1">
+					<grid hflex="min">
 						<columns>
 							<column align="right" hflex="min" />
 							<column />
@@ -68,7 +68,7 @@
 										id="selectedTodoPriority">
 										<template name="model">
 											<radio
-												label="${each.label}" />
+												label=" ${each.label}" />
 										</template>
 									</radiogroup>
 								</cell>
@@ -93,9 +93,9 @@
 						</rows>
 					</grid>
 					<hlayout>
-					<button id="updateSelectedTodo" label="Update"/>
-					<button id="reloadSelectedTodo" label="Reload"/>
-				</hlayout>
+						<button id="updateSelectedTodo" label="Update" />
+						<button id="reloadSelectedTodo" label="Reload" />
+					</hlayout>
 				</vlayout>
 			</east>
 		</borderlayout>

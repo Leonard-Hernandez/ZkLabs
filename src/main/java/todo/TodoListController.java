@@ -86,6 +86,30 @@ public class TodoListController extends SelectorComposer<Component> {
 			todoSubject.setValue("");
 		}
 	}
+	
+	@Listen("onClick = #updateSelectedTodo")
+	public void doUpdateClick() {
+		if(Strings.isBlank(selectedTodoSubject.getValue())) {
+			Clients.showNotification("Nada por hacer ?", selectedTodoSubject);
+			return;
+		}		
+		selectedTodo.setComplete(selectedTodoCheck.isChecked());
+		selectedTodo.setSubject(selectedTodoSubject.getValue());
+		selectedTodo.setDate(selectedTodoDate.getValue());
+		selectedTodo.setDescription(selectedTodoDescription.getValue());
+		selectedTodo.setPriority(priorityListModel.getSelection().iterator().next());
+		
+		selectedTodo = todoListService.updateTodo(selectedTodo);
+		
+		todoListModel.set(todoListModel.indexOf(selectedTodo), selectedTodo);
+		
+		Clients.showNotification("Todo guardado");
+	}
+	
+	@Listen("onClick = #reloadSelectedTodo")
+	public void doReloadClick() {
+		refreshDetailView();
+	}
 
 	@Listen("onSelect = #todoListbox")
 	public void doTodoSelect() {
